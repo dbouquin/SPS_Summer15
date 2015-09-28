@@ -1,0 +1,63 @@
+---
+title: "R Assignment 1"
+author: "Daina Bouquin"
+date: "July 4, 2015"
+output: html_document
+---
+
+First R assignment for my MS in Data Analytics Summer R Refresher course.
+
+1. Write a loop that calculates 12-factorial.
+```{r, echo=TRUE}
+
+x <- 12
+y <- 1
+
+for(i in 1:x){
+    y <-y*((1:x)[i])
+}
+y
+
+#check with factorial()
+
+y == factorial(12)
+
+```
+2. Show how to create a numeric vector that contains the sequence from 20 to 50 by 5.
+```{r, echo=TRUE}
+
+seq_1 <- seq(from=20, to=50, by=5)
+seq_1
+
+```
+3. Show how to take a trio of input numbers a, b, and c and implement the quadratic equation.
+
+This below response is built from an online example I found on [the R Help Mailing List](https://stat.ethz.ch/pipermail/r-help/2005-November/082164.html) by Ted Harding.
+
+Couldn't it be more efficient to use polyroot?
+
+```{r, echo=TRUE}
+
+# ax2 + bx + c = 0
+
+a <- 1
+b <- 4
+c <- 3
+
+qs <- function(a,b,c){
+    a <- as.complex(a); b <- as.complex(b); c <- as.complex(c)
+    i2 <- (a!=0); i1 <- ((a==0)&(b!=0));
+    solns <- as.complex(rep(NA,length(a)))
+      solns <- cbind(solns,solns); colnames(solns) <- c("solution1","solution2")
+    a2 <- a[i2]; b2 <- b[i2]; c2 <- c[i2]
+      solns[i2,1] <- (-b2 + sqrt(b2^2 - 4*a2*c2))/(2*a2)
+      solns[i2,2] <- (-b2 - sqrt(b2^2 - 4*a2*c2))/(2*a2)
+    b1 <- b[i1]; c1 <- c[i1]
+      solns[i1,1] <- (-c1)/b1
+    solns
+  }
+
+qs(a,b,c)
+
+```
+

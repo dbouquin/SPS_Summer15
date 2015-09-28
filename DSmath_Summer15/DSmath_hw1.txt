@@ -1,0 +1,136 @@
+Week 1: Probability
+Assignment: Please complete exercises 2.12, 2.14, 2.28, and 2.30 in OpenIntro Statistics 2nd Ed.
+https://drive.google.com/file/d/0B-DHaDEbiOGkZ1o5VVYwYXVKVjg/view
+
+2.12
+School absences. Data collected at elementary schools in DeKalb County, GA suggest
+that each year roughly 25% of students miss exactly one day of school, 15% miss 2 days, and 28%
+miss 3 or more days due to sickness.
+
+(a) What is the probability that a student chosen at random doesn’t miss any days of school due
+to sickness this year?
+(25 + 15 + 28) = 68 ; 100 - 68 = 32 ; 32%
+
+(b) What is the probability that a student chosen at random misses no more than one day?
+25%
+
+(c) What is the probability that a student chosen at random misses at least one day?
+68%
+
+(d) If a parent has two kids at a DeKalb County elementary school, what is the probability that
+neither kid will miss any school? Note any assumption you must make to answer this question.
+32/100 * 32/100 = .1024
+This assumes the two children getting sick (events) are independent
+
+(e) If a parent has two kids at a DeKalb County elementary school, what is the probability that
+that both kids will miss some school, i.e. at least one day? Note any assumption you make.
+68/100 * 68/100 = .4624
+This assumes the two children getting sick (events) are independent
+
+(f) If you made an assumption in part (d) or (e), do you think it was reasonable? If you didn’t
+make any assumptions, double check your earlier answers.
+This is somewhat reasonable. By assuming a child getting sick is independent of whether or not
+the other child in the family gets sick, you assume the family is keeping them apart and taking
+preventative measures with the not sick child. You may want to calculate the likelihood that one
+child being sick increases the likelihood that the other child gets sick.
+
+2.14
+Weight and health coverage, Part I. The Behavioral Risk Factor Surveillance System
+(BRFSS) is an annual telephone survey designed to identify risk factors in the adult population and
+report emerging health trends. The following table summarizes two variables for the respondents:
+weight status using body mass index (BMI) and health coverage, which describes whether each
+respondent had health insurance.66
+
+Weight Status
+                 |  Not Overweight | Overweight |Obese    | Total
+                 |   or obese      |            |         |
+Health   |  Yes  | 134,801         | 141,699    | 107,301 | 383,801
+Coverage |  No   | 15,098          | 15,327     | 14,412  | 44,837
+         | Total | 149,899         | 157,026    | 121,713 | 428,638
+
+(a) If we draw one individual at random, what is the probability that the respondent is overweight
+and doesn’t have health coverage?
+15327/428638 = .0358
+
+(b) If we draw one individual at random, what is the probability that the respondent is overweight
+or doesn’t have health coverage?
+P(overweight OR no coverage) = P(overweight) + P(no coverage) - P(overweight and no coverage)
+                             = (157026/428638) + (44837/328638) - (15327/428638)
+                             = .36633709563 + .13653279231 - .03575744567
+                             = .467
+
+2.28
+Socks in a drawer. In your sock drawer you have 4 blue, 5 gray, and 3 black socks. Half
+asleep one morning you grab 2 socks at random and put them on. Find the probability you end
+up wearing
+
+(a) 2 blue socks
+4/12 * 3/11 = .0909
+
+(b) no gray socks
+7/12 * 6/11 = .318
+
+(c) at least 1 black sock
+
+1 - P(no black)
+1 - ((9/12) * (8/11))
+1 - .5454
+= .45
+
+OR
+
+Binomial coefficients
+n!/(k!(n-k)!)
+
+2!/(1!(1-2)!) = 2
+2!/(2!(2-2)!) = 1
+
+P(r = 1) = 2 * (3/12)^1 * (9/12)^(2-1) = 2 * (3/12) * (9/12) = .375
+           1
+
+P(r = 2) = 2 * (3/12)^2 * (9/12)^(2-2) = 1 * (.0625) * 1 = .065
+           2
+
+         = .375 + .065 = .45
+
+(d) a green sock
+0/12 = 0
+
+(e) matching socks
+2 blue OR 2 gray OR 2 black
+P (A U B U C) = P(A) + P(B) + P(C) - P(A ∩ B) - P(A ∩ C) - P(B ∩ C) + P(A ∩ B ∩ C)
+
+A = P(2 blue) = 4/12 * 3/11 = .0909
+B = P(2 gray) = 5/12 * 4/11 = .1515
+C = P(2 black) = 3/12 * 2/11 = .04545
+
+= .0909 + .1515 + .04545 - (.0909 * .1515) - (.0909 * .04545) - (.1515 * .04545) + (.0909 * .1515 * .04545)
+= .2637
+
+2.30
+Books on a bookshelf. The table below shows the distribution of books on a bookcase
+based on whether they are nonfiction or fiction and hardcover or paperback.
+
+Format
+                   | Hardcover | Paperback |Total
+     |  Fiction    | 13        | 59        | 72
+Type |  Nonfiction | 15        | 8         | 23
+     | Total       | 28        | 67        | 95
+
+(a) Find the probability of drawing a hardcover book first then a paperback fiction book second
+when drawing without replacement.
+(28/95) * (59/94) = .185
+
+(b) Determine the probability of drawing a fiction book first and then a hardcover book second,
+when drawing without replacement.
+
+(72/95) * (28/94) = .2258
+
+(c) Calculate the probability of the scenario in part (b), except this time complete the calculations
+under the scenario where the first book is placed back on the bookcase before randomly drawing
+the second book.
+(72/95) * (28/95) = .2234
+
+(d) The final answers to parts (b) and (c) are very similar. Explain why this is the case.
+They are similar because there is a probability that the fiction book is hardcover, and it therefore impacts
+the probability that the second draw is a hardcover book.
